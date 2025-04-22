@@ -1,4 +1,3 @@
-```markdown
 <div align="center">
 
 # 🔍 GTSearch  
@@ -61,68 +60,3 @@ For every user query, top-k relevant documents are retrieved from Pinecone and p
 ### 🔧 Install Dependencies
 ```bash
 pip install scrapy flask fastembed openai pinecone-client
-```
-
-### 🕷️ Run Crawler
-```bash
-scrapy crawl tsearch -o search.json
-```
-
-This will crawl relevant Georgia Tech pages and push the filtered data into Pinecone.
-
-### 🌐 Start Flask Server
-```bash
-cd server
-python app.py
-```
-
-### 📬 API Usage
-```http
-POST /tsearch/search
-```
-**Payload:**
-```json
-{
-  "search_query": "What are good graduate courses in databases offered in Fall 2024?"
-}
-```
-
-**Response:** A GPT-generated answer with context-aware results.
-
----
-
-## 🗂️ File Structure
-
-```
-gtsearch/
-├── server/         # Flask backend server
-│   └── app.py
-├── spiders/        # Scrapy crawler and logic
-│   └── tsearch.py
-├── search.json     # Output of crawl
-└── README.md       # Project documentation
-```
-
----
-
-## 📈 Roadmap & Improvements
-
-- ✅ College of Computing context
-- 🔜 Expand to all GT departments
-- 🔜 Add multi-turn conversation memory
-- 🔜 Real-time UI enhancements
-- 🔜 Streamed response delivery
-
----
-
-## 📣 Author
-
-Built and maintained by **Anirudh Bharadwaj Krishna**  
-📫 [anirudhbkrishna@gatech.edu](mailto:anirudhbkrishna@gatech.edu)
-
----
-
-## ⭐️ Star this repo if you found it useful!
-```
-
----
